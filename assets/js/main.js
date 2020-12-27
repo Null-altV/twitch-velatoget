@@ -1,6 +1,6 @@
 'use strict';
 
-const TWITCH_USER = 'velatoget';
+const TWITCH_USER = 'YOUR-CHANNEL-NAME-HERE';
 
 const container = document.querySelector(".container");
 
@@ -19,7 +19,6 @@ ComfyJS.onChat = ( user, message, flags, self, extra ) => {
         queue.enqueue(`${user} : ${message}`);
         showMessage();
     }
-
     // Storing custom rewards instead
     
     // if (flags.customReward && extra.customRewardId === "60db8d01-96b2-4d08-9fcf-9b01eb2eefee") { 
