@@ -13,4 +13,4 @@ snippet for stream
 1. Edit and fill the variable with desired channel name `const TWITCH_USER = 'YOUR-CHANNEL-NAME-HERE';` located in `assets/js/main.js`
 2. Open `index.html` and wait for submodule init. Open your console to determine if it is ready. There should be a message indicating if the connection is successful or not. => `Connected:irc-ws.chat.twitch.tv:443`
 
-At this point you are ready to go. Every message that is sent on the desired channel, will pop up on your localhost index page with fade-in and fade-out animation.
+At this point you are ready to go. Every message that is sent on the desired channel, will pop up on your localhost index page with fade-in and fade-out animation. One by one.
