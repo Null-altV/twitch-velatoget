@@ -4,8 +4,9 @@ snippet for stream
 # how to
 
 1. `git clone https://github.com/Null-altV/twitch-velatoget.git`
-2. `git submodule init`
-3. `git submodule update`
+2. `cd twitch-velatoget`
+3. `git submodule init`
+4. `git submodule update`
 
 # config and usage
 
