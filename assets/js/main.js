@@ -1,13 +1,15 @@
 'use strict';
 
+const TWITCH_USER = 'nullfromdiscord';
+
 const container = document.querySelector(".container");
 
 class Queue {
-    items = [];
+    items   = [];
     enqueue = (item) => this.items.unshift(item);
     dequeue = () => this.items.pop();
     isempty = () => this.items.length === 0;
-    size = () => this.items.length;
+    size    = () => this.items.length;
 }
 
 const queue = new Queue();
@@ -19,7 +21,7 @@ ComfyJS.onChat = ( user, message, flags, self, extra ) => {
     }
 }
 
-ComfyJS.Init ( "nullfromdiscord" );
+ComfyJS.Init(TWITCH_USER);
 
 let isActive = false;
 function showMessage() {
