@@ -1,6 +1,6 @@
 'use strict';
 
-const TWITCH_USER = 'nullfromdiscord';
+const TWITCH_USER = 'velatoget';
 
 const container = document.querySelector(".container");
 
@@ -15,8 +15,8 @@ class Queue {
 const queue = new Queue();
 
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
-    if (message) {
-        queue.enqueue(message);
+    if (flags.customReward && extra.customRewardId === "60db8d01-96b2-4d08-9fcf-9b01eb2eefee") {
+        queue.enqueue(`Thank you ${user}!`);
         showMessage();
     }
 }
