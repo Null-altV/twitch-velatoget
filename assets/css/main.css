@@ -23,3 +23,22 @@ body {
     50%     { opacity: 1; }
     100%    { opacity: 0; }
 }
+
+.image {
+    position: absolute;
+    top: 50px;
+    width: 100px;
+}
+
+.move {
+    animation: move 1000ms ease;
+}
+
+@keyframes move {
+    15%     { top: 70px; }
+    30%     { top: 50px; }
+    45%     { top: 70px; }
+    60%     { top: 50px; }
+    75%     { top: 70px; }
+    90%     { top: 50px; }
+}

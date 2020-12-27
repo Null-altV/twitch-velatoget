@@ -3,6 +3,7 @@
 const TWITCH_USER = 'YOUR-CHANNEL-NAME-HERE';
 
 const container = document.querySelector(".container");
+const egg = document.querySelector(".image");
 
 class Queue {
     items   = [];
@@ -19,12 +20,6 @@ ComfyJS.onChat = ( user, message, flags, self, extra ) => {
         queue.enqueue(`${user} : ${message}`);
         showMessage();
     }
-    // Storing custom rewards instead
-    
-    // if (flags.customReward && extra.customRewardId === "60db8d01-96b2-4d08-9fcf-9b01eb2eefee") { 
-    //     queue.enqueue(`Thank you ${user}!`);
-    //     showMessage();
-    // }
 }
 
 ComfyJS.Init(TWITCH_USER);
@@ -34,6 +29,7 @@ function showMessage() {
     if (isActive === false && !queue.isempty()) {
         isActive = true;
         container.classList.add("animation");
+        egg.classList.add("move");
         container.innerHTML = queue.dequeue();
     }
 }
@@ -41,6 +37,8 @@ function showMessage() {
 function endHandler() {
     container.classList.remove("animation");
     void container.offsetWidth; // Hacky and necessary solution for animation reset
+    egg.classList.remove("move");
+    void egg.offsetWidth; // Hacky and necessary solution for animation reset
     container.innerHTML = null;
     isActive = false;
     showMessage();
