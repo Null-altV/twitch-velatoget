@@ -1,0 +1,3 @@
+[submodule "assets/lib/ComfyJS"]
+	path = assets/lib/ComfyJS
+	url = https://github.com/instafluff/ComfyJS.git

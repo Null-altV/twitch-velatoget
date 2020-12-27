@@ -1,0 +1,25 @@
+*, *:before, *:after {
+    box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box;
+}
+
+body {
+    margin: 0; padding: 0;
+    color: rgba(250, 250, 250, 1);
+    background-color: rgba(60, 60, 60, 1);
+}
+
+.container {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.animation {
+    animation: fade-in 5000ms ease;
+}
+
+@keyframes fade-in {
+    0%      { opacity: 0; }
+    50%     { opacity: 1; }
+    100%    { opacity: 0; }
+}
