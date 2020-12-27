@@ -1,5 +1,7 @@
 'use strict';
 
+const container = document.querySelector(".container");
+
 class Queue {
     items = [];
     enqueue = (item) => this.items.unshift(item);
@@ -8,9 +10,7 @@ class Queue {
     size = () => this.items.length;
 }
 
-const queue = new Queue()
-
-const container = document.querySelector(".container");
+const queue = new Queue();
 
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
     if (message) {
@@ -19,11 +19,12 @@ ComfyJS.onChat = ( user, message, flags, self, extra ) => {
     }
 }
 
-let active = false;
+ComfyJS.Init ( "nullfromdiscord" );
 
+let isActive = false;
 function showMessage() {
-    if (active === false && !queue.isempty()) {
-        active = true;
+    if (isActive === false && !queue.isempty()) {
+        isActive = true;
         container.classList.add("animation");
         container.innerHTML = queue.dequeue();
     }
@@ -31,12 +32,10 @@ function showMessage() {
 
 function endHandler() {
     container.classList.remove("animation");
-    void container.offsetWidth; // HACKYYY AND NECESSARY X D
+    void container.offsetWidth; // Hacky and necessary solution for animation reset
     container.innerHTML = null;
-    active = false;
+    isActive = false;
     showMessage();
 }
 
 container.addEventListener("animationend", endHandler);
-
-ComfyJS.Init ( "nullfromdiscord" );
