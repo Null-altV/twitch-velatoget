@@ -15,10 +15,17 @@ class Queue {
 const queue = new Queue();
 
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
-    if (flags.customReward && extra.customRewardId === "60db8d01-96b2-4d08-9fcf-9b01eb2eefee") {
-        queue.enqueue(`Thank you ${user}!`);
+    if (message) {
+        queue.enqueue(`${user} : ${message}`);
         showMessage();
     }
+
+    // Storing custom rewards instead
+    
+    // if (flags.customReward && extra.customRewardId === "60db8d01-96b2-4d08-9fcf-9b01eb2eefee") { 
+    //     queue.enqueue(`Thank you ${user}!`);
+    //     showMessage();
+    // }
 }
 
 ComfyJS.Init(TWITCH_USER);
